@@ -46,12 +46,7 @@ testem.log
 Thumbs.db
 
 # Project exclude paths
-/.gradle/
-/build/
-/controller/build/
-/frontend/.gradle/
-/frontend/build/
-/frontend/node_modules/
-/out/
-/server/.gradle/
-/server/build/
+*.gradle
+*build
+*out
+*node_modules
