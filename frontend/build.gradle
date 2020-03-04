@@ -1,0 +1,58 @@
+buildscript {
+  repositories {
+    mavenLocal()
+  }
+}
+
+plugins {
+  id "com.moowork.node" version "1.3.1"
+  id "org.openapi.generator" version "4.2.3"
+}
+
+node {
+  version = '6.13.4'
+  download = true
+  nodeModulesDir = file("/")
+}
+
+task buildClientDev(type: NpmTask, dependsOn: 'npmInstall') {
+  group = 'build'
+  description = 'Compile client side assets for development'
+  args = ['run', 'buildDev']
+}
+
+task buildClient(type: NpmTask, dependsOn: 'npmInstall') {
+  group = 'build'
+  description = 'Compile client side assets for production'
+  args = ['run', 'build']
+}
+
+task buildClientWatch(type: NpmTask, dependsOn: 'npmInstall') {
+  group = 'application'
+  description = 'Builds and watches the client side assets for rebuilding'
+  args = ['run', 'buildWatch']
+}
+
+task clientTest(type: NpmTask, dependsOn: 'npmInstall') {
+  group = 'verification'
+  description = 'Executes client side unit tests'
+  args = ['run', 'test']
+}
+
+openApiGenerate{
+  generatorName = "typescript-angular"
+  inputSpec = "$rootDir/api/src/api.yaml".toString()
+  outputDir = "$buildDir/genereted".toString()
+  apiPackage = "at.lerning.alp.api"
+  invokerPackage = "at.lerning.alp"
+  modelPackage = "at.lerning.alp.model"
+  modelFilesConstrainedTo = []
+}
+
+build.dependsOn(buildClientDev)
+
+test.dependsOn(clientTest)
+
+clean {
+  delete fileTree(dir: "build")
+}
