@@ -30,6 +30,10 @@ configure(allprojects - nodeProjects) {
     apply plugin: "org.springframework.boot"
     apply plugin: 'io.spring.dependency-management'
 
+    springBoot {
+        mainClassName = 'at.lerning.alp.Application'
+    }
+
     configurations {
         developmentOnly
         runtimeClasspath {
@@ -55,8 +59,4 @@ configure(allprojects - nodeProjects) {
     test {
         useJUnitPlatform()
     }
-}
-
-bootJar {
-    mainClassName = 'at.lerning.alp.Application'
 }

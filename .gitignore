@@ -7,9 +7,6 @@
 # Only exists if Bazel was run
 /bazel-out
 
-# dependencies
-/node_modules
-
 # profiling files
 chrome-profiler-events*.json
 speed-measure-plugin*.json
@@ -46,7 +43,9 @@ testem.log
 Thumbs.db
 
 # Project exclude paths
-*.gradle
-*build
-*out
-*node_modules
+**/.gradle
+**/build
+**/out
+**/node_modules
+**/package-lock.json
+**/dist

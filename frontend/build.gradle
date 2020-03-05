@@ -10,30 +10,30 @@ plugins {
 }
 
 node {
-  version = '6.13.4'
+  version = '12.16.1'
   download = true
   nodeModulesDir = file("/")
 }
 
-task buildClientDev(type: NpmTask, dependsOn: 'npmInstall') {
+task buildClientDev(type: NpmTask, dependsOn: ['npmInstall', 'openApiGenerate']) {
   group = 'build'
   description = 'Compile client side assets for development'
   args = ['run', 'buildDev']
 }
 
-task buildClient(type: NpmTask, dependsOn: 'npmInstall') {
+task buildClient(type: NpmTask, dependsOn: ['npmInstall', 'openApiGenerate']) {
   group = 'build'
   description = 'Compile client side assets for production'
   args = ['run', 'build']
 }
 
-task buildClientWatch(type: NpmTask, dependsOn: 'npmInstall') {
+task buildClientWatch(type: NpmTask, dependsOn: ['npmInstall', 'openApiGenerate']) {
   group = 'application'
   description = 'Builds and watches the client side assets for rebuilding'
   args = ['run', 'buildWatch']
 }
 
-task clientTest(type: NpmTask, dependsOn: 'npmInstall') {
+task clientTest(type: NpmTask, dependsOn: ['npmInstall', 'openApiGenerate']) {
   group = 'verification'
   description = 'Executes client side unit tests'
   args = ['run', 'test']
@@ -50,8 +50,6 @@ openApiGenerate{
 }
 
 build.dependsOn(buildClientDev)
-
-test.dependsOn(clientTest)
 
 clean {
   delete fileTree(dir: "build")
