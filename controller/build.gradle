@@ -24,7 +24,7 @@ dependencies {
 openApiGenerate {
     generatorName = "kotlin"
     inputSpec = "$rootDir/api/src/api.yaml".toString()
-    outputDir = "$buildDir/genereted".toString()
+    outputDir = "$buildDir/generated".toString()
     apiPackage = "at.lerning.alp.api"
     invokerPackage = "at.lerning.alp"
     modelPackage = "at.lerning.alp.model"
@@ -35,7 +35,7 @@ openApiGenerate {
 }
 
 sourceSets {
-    main.kotlin.srcDirs += 'build/generated/src/'
+    main.kotlin.srcDirs += "$buildDir/generated/src/"
 }
 
 compileKotlin.dependsOn tasks.openApiGenerate
