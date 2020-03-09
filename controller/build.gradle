@@ -1,6 +1,6 @@
 plugins {
     id 'org.jetbrains.kotlin.jvm'
-    id "org.openapi.generator" version "4.2.3"
+    id "org.openapi.generator"
 }
 
 repositories {
@@ -8,7 +8,7 @@ repositories {
 }
 
 dependencies {
-    implementation project(':services')
+    compile project(':services')
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
     implementation 'org.springframework.boot:spring-boot-starter'
     implementation 'org.springframework.boot:spring-boot-starter-security'
@@ -22,7 +22,7 @@ dependencies {
 }
 
 openApiGenerate {
-    generatorName = "kotlin"
+    generatorName = "kotlin-spring"
     inputSpec = "$rootDir/api/src/api.yaml".toString()
     outputDir = "$buildDir/generated".toString()
     apiPackage = "at.lerning.alp.api"
@@ -30,7 +30,11 @@ openApiGenerate {
     modelPackage = "at.lerning.alp.model"
     modelFilesConstrainedTo = []
     configOptions = [
-            dateLibrary: "java8"
+            dateLibrary       : "java8",
+            interfaceOnly     : "true",
+            library           : "spring",
+            gradleBuildFile   : "true",
+            enumPropertyNaming: "UPPERCASE"
     ]
 }
 

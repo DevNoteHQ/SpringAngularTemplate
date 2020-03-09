@@ -7,7 +7,7 @@ repositories {
 }
 
 dependencies {
-    implementation project(':controller')
+    compile project(':controller')
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
     implementation 'org.springframework.boot:spring-boot-starter'
     annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
