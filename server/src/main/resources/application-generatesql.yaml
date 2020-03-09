@@ -10,4 +10,4 @@ spring:
             create-source: metadata
             scripts:
               action: create
-              create-target: ./domain/src/main/resources/db/migration/ddl_jpa_creation.sql
+              create-target: ./domain/src/main/resources/db/migration/2020_99_99_0000_Descriptive_Name_PLS.sql
