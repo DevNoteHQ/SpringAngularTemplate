@@ -5,6 +5,6 @@ spring:
     username: root
     password: development
   jpa:
-    database-platform: com.mysql.cj.jdbc.Driver
+    database-platform: org.hibernate.dialect.MySQLMyISAMDialect
     hibernate:
       ddl-auto: validate
