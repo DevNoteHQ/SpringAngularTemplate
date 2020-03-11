@@ -35,12 +35,11 @@ configure(subprojects.findAll { !(it.name in nodeProjects) }) {
     apply plugin: "kotlin"
     apply plugin: "kotlin-kapt"
     apply plugin: "kotlin-spring"
+    apply plugin: "application"
     apply plugin: "org.springframework.boot"
     apply plugin: 'io.spring.dependency-management'
 
-    springBoot {
-        mainClassName = 'at.lerning.alp.Application'
-    }
+    mainClassName = 'at.lerning.alp.Application'
 
     configurations {
         developmentOnly
