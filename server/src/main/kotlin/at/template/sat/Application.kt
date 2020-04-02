@@ -1,4 +1,4 @@
-package at.lerning.alp
+package at.template.sat
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication

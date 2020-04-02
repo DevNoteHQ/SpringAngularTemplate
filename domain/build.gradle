@@ -28,9 +28,9 @@ dependencies {
 }
 
 flyway {
-    url = 'jdbc:mysql://localhost:3306/alp'
+    url = 'jdbc:mysql://localhost:3306/sat'
     user = 'root'
     password = 'development'
-    schemas = ['alp']
+    schemas = ['sat']
     configurations = [ 'compileClasspath', 'flywayMigration']
 }

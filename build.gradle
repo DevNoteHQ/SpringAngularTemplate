@@ -20,7 +20,7 @@ plugins {
 def nodeProjects = [ ":frontend" ]
 
 subprojects {
-    group 'at.lerning.alp'
+    group 'at.template.sat'
     version '0.1.0-SNAPSHOT'
 
     apply plugin: 'org.jetbrains.kotlin.jvm'
@@ -39,7 +39,7 @@ configure(subprojects.findAll { !(it.name in nodeProjects) }) {
     apply plugin: "org.springframework.boot"
     apply plugin: 'io.spring.dependency-management'
 
-    mainClassName = 'at.lerning.alp.Application'
+    mainClassName = 'at.template.sat.Application'
 
     configurations {
         developmentOnly

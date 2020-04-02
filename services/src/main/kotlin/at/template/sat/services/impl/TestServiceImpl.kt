@@ -1,7 +1,7 @@
-package at.lerning.alp.services.impl
+package at.template.sat.services.impl
 
-import at.lerning.alp.repositories.TestRepository
-import at.lerning.alp.services.TestService
+import at.template.sat.repositories.TestRepository
+import at.template.sat.services.TestService
 import org.springframework.stereotype.Service
 
 @Service

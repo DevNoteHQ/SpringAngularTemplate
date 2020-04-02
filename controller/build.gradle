@@ -25,9 +25,9 @@ openApiGenerate {
     generatorName = "kotlin-spring"
     inputSpec = "$rootDir/api/src/api.yaml".toString()
     outputDir = "$buildDir/generated".toString()
-    apiPackage = "at.lerning.alp.api"
-    invokerPackage = "at.lerning.alp"
-    modelPackage = "at.lerning.alp.model"
+    apiPackage = "at.template.sat.api"
+    invokerPackage = "at.template.sat"
+    modelPackage = "at.template.sat.model"
     modelFilesConstrainedTo = []
     configOptions = [
             dateLibrary       : "java8",

@@ -1,4 +1,4 @@
-rootProject.name = 'AngularLerningProject'
+rootProject.name = 'SpringAngularTemplate'
 
 include ':frontend'
 include ':controller'

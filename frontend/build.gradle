@@ -43,9 +43,9 @@ openApiGenerate{
   generatorName = "typescript-angular"
   inputSpec = "$rootDir/api/src/api.yaml".toString()
   outputDir = "$buildDir/genereted".toString()
-  apiPackage = "at.lerning.alp.api"
-  invokerPackage = "at.lerning.alp"
-  modelPackage = "at.lerning.alp.model"
+  apiPackage = "at.template.sat.api"
+  invokerPackage = "at.template.sat"
+  modelPackage = "at.template.sat.model"
   modelFilesConstrainedTo = []
 }
 
